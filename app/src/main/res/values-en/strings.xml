@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Application tutorial</string>
+    <string name="nombre">Name</string>
+    <string name="correo">E-mail</string>
+    <string name="Telefono">phone</string>
+    <string name="contraseña">Password</string>
+    <string name="verificarcontraseña">Verify Password</string>
+    <string name="register">Register</string>
+    <string name="registro">REGISTER</string>
+    <string name="respuesta_text_view">answer</string>
+    <string name="respuesta"> Name: %s\nEmail: %s\nPhone: %s\nPassword: %s\nVerifyPassword: %s\nGander: %s\nHobby: %s\nCyti of birth: %s </string>
+    <string name="masculino">Male</string>
+    <string name="femenino">Female</string>
+    <string name="genero">Gander</string>
+    <string name="pasatiempo">Hobby</string>
+    <string name="nadar">Swim</string>
+    <string name="Caminar">walk</string>
+    <string name="leer">Read</string>
+    <string name="lugar_nacimiento">place of birth</string>
+
+    <string-array name="ciudad_nacimiento">
+        <item>Select a city</item>
+        <item>Medellín</item>
+        <item>Pitalito</item>
+        <item>Bogota</item>
+        <item>Cali</item>
+    </string-array>
+
+</resources>
