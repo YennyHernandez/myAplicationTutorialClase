@@ -1,10 +1,12 @@
 package com.yennyh.myapplicationtutorial.ui.registro
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.yennyh.myapplicationtutorial.R
+import com.yennyh.myapplicationtutorial.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_registro.*
 
 
@@ -21,6 +23,8 @@ class RegistroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_registro)
         Log.d( "Metodo","onCreate")
         registrar_button.setOnClickListener{
+
+
             val nombre = nombre_edit_text.text.toString()
             val correo = correo_edit_text.text.toString()
             val telefono = telefono_edit_text.text.toString()
@@ -39,9 +43,19 @@ class RegistroActivity : AppCompatActivity() {
             val ciudaddenacimiento = ciudad_nacimiento_spinner.selectedItem
             respuesta_text_View.text = getString(R.string.respuesta, nombre, correo, telefono, contrasena, verificarcontra, genero, pasatiempo, ciudaddenacimiento)
 
+            /* ------------  se puede crear funcion para enviar datos-------- */
+                val login = Intent(this, LoginActivity::class.java)
+                login.putExtra("correo", correo)
+                login.putExtra("contrasena", contrasena)
+                startActivity(login)
+                finish()
+            /* -------------------------------------------------------------- */
+
         }
 
      }
+
+
 
     override fun onStart() {
         super.onStart()
@@ -61,6 +75,11 @@ class RegistroActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         Log.d( "Metodo","onStop")
+    }
+    override fun onBackPressed() {
+        val login = Intent(this, LoginActivity::class.java)
+        startActivity(login)
+        finish()
     }
 
     override fun onDestroy() {

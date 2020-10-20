@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     android:padding="8dp"
     tools:context=".ui.crear.CrearFragment">
@@ -10,13 +11,63 @@
     <!-- TODO: Update blank fragment layout -->
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nombre_text_input_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nombre_textInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/digite_nombre" />
+            android:hint="@string/digite_nombre"
+            android:textColor="#979393"
+            android:textSize="24sp" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/telefono__text_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/telefono_textInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Telefono"
+            android:inputType="number"
+            android:phoneNumber="false"
+            android:textColor="#979393"
+            android:textSize="24sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/_text_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/deuda_textInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/deuda"
+            android:inputType="number"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:textColor="#2B2B2B"
+            android:textSize="24sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/guardar_button"
+        style="@android:style/Animation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+        android:background="@color/colorPrimary"
+        android:gravity="center_horizontal"
+        android:text="@string/guardar"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
 
 </LinearLayout>
