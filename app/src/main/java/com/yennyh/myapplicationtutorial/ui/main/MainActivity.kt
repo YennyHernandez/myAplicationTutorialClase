@@ -17,14 +17,13 @@ class MainActivity : AppCompatActivity() {
         //por defecto se agrega fragmento crear
         val crearFragment = CrearFragment()
         transaction.add(R.id.contenedor, crearFragment).commit()
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        return super.onCreateOptionsMenu(menu)
         menuInflater.inflate(R.menu.menu_overflow,menu)
         return true
     }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val manager = supportFragmentManager  //se puede poner private var afuera pero en cada override se debe poner transactio = manager.begintransation porque el con commit solo lo hace una vez por transation
         val transaction = manager.beginTransaction()
