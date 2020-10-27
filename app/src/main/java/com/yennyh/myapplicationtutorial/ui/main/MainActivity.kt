@@ -21,18 +21,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_overflow,menu)
+        menuInflater.inflate(R.menu.menu,menu)
         return true
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val manager = supportFragmentManager  //se puede poner private var afuera pero en cada override se debe poner transactio = manager.begintransation porque el con commit solo lo hace una vez por transation
         val transaction = manager.beginTransaction()
         when(item.itemId){
-            R.id.menu_crear->{
+            R.id.nav_crear->{
                 val crearFragment = CrearFragment()
                 transaction.replace(R.id.contenedor, crearFragment).commit()
             }
-            R.id.menu_buscar->{
+            R.id.nav_buscar->{
                 val BuscarFragment =BuscarFragment()
                 transaction.replace(R.id.contenedor, BuscarFragment).commit()
             }
