@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.drawer.DrawerActivity"
-            android:label="@string/title_activity_drawer"
+            android:name=".ui.tabs.Tabbedctivity"
+            android:label="@string/title_activity_tabbedctivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.main.MainActivity">
+        <activity
+            android:name=".ui.bottom.bottomActivity"
+            android:label="@string/title_activity_bottom">
 
         </activity>
+        <activity
+            android:name=".ui.drawer.DrawerActivity"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ui.main.MainActivity" />
         <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".ui.registro.RegistroActivity" />
     </application>
