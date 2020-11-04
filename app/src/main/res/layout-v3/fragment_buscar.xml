@@ -24,7 +24,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buscar_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30sp"
@@ -35,14 +35,14 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/telefono_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Telefono"
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/valor_deuda_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/deuda"

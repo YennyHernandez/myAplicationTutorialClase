@@ -28,7 +28,7 @@ class RegistroActivity : AppCompatActivity() {
             val nombre = nombre_edit_text.text.toString()
             val correo = correo_edit_text.text.toString()
             val telefono = telefono_edit_text.text.toString()
-            val contrasena = contraseña_edit_text.text.toString()
+            val contrasena = contrasena_edit_text.text.toString()
             val verificarcontra = verificarcontra_edit_text.text.toString()
             val genero = if (masculino_radio_button.isChecked) getString(R.string.masculino) else getString(
                 R.string.femenino
