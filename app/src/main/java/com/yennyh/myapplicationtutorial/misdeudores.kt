@@ -18,7 +18,8 @@ class misdeudores : Application() {
             "deudor_DB"
             /*deudor_DB, nombre de la base de datos que tiene una tabla_deudor(deudor.kt) con 4 campos
         en deudorDAO hay una funcion que inserta los datos del formulario*/
-        ).build()
+        ).allowMainThreadQueries()  //quita el bloqueo que pone android por usar bases de datos en la misms vista y no hilo diferente ES TEMPORAL MALA PRACTICA
+            .build()
     }
 }
 

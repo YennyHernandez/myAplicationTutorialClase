@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "708345934965",
+    "firebase_url": "https://myapplicationtutorial-c89222.firebaseio.com",
+    "project_id": "myapplicationtutorial-c89222",
+    "storage_bucket": "myapplicationtutorial-c89222.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708345934965:android:583cb82d2b0fa2a784343c",
+        "android_client_info": {
+          "package_name": "com.yennyh.myapplicationtutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708345934965-cjo2rggshkm0b9flb55ps359js1kbu4p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsQX1RfdEyxhZDhkS6UlIlJifP9cF4IMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708345934965-cjo2rggshkm0b9flb55ps359js1kbu4p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

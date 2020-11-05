@@ -1,10 +1,10 @@
 package com.yennyh.myapplicationtutorial.ui.crear
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.yennyh.myapplicationtutorial.R
 import com.yennyh.myapplicationtutorial.data.database.dao.DeudorDAO
 import com.yennyh.myapplicationtutorial.data.database.entities.Deudor
@@ -30,12 +30,10 @@ class CrearFragment : Fragment() {
             val nombre = binding.nombreTextInputEditText.text.toString()
             val telefono = binding.telefonoTextInputEditText.text.toString().toLong()
             val valor =  binding.deudaTextInputEditText.text.toString().toLong()
-            val deudor = Deudor(NULL,nombre, telefono, valor)
+            val deudor = Deudor(NULL, nombre, telefono, valor)
             val deudorDAO :DeudorDAO = misdeudores.database.DeudorDAO()  //aqui ya tenemos acceso al DAO
             deudorDAO.insertDeudor(deudor)  //se insertan los datos por medio de la funcion insert
         }
-
-
      /* con syntetic
         guardar_button.setOnClickListener{
             val nombre = nombre_textInputEditText.text.toString()
