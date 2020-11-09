@@ -67,6 +67,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
+                                                <entry key="color" value="000000" />
                                                 <entry key="imagePath" value="C:\Users\PC\AppData\Local\Temp\ic_android_black_24dp.xml" />
                                               </map>
                                             </option>
@@ -79,8 +80,8 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\PC\Downloads\logocapripicnicoficial.png" />
-                                                <entry key="scalingPercent" value="101" />
+                                                <entry key="imagePath" value="C:\Users\PC\Downloads\REPARACION-DEUDA.jpg" />
+                                                <entry key="scalingPercent" value="65" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -112,7 +113,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="imagen_Splashcapri" />
+                                      <entry key="backgroundAssetType" value="COLOR" />
+                                      <entry key="backgroundColor" value="88a5ab" />
+                                      <entry key="outputName" value="ic_logo" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -306,7 +309,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/find_in_page/baseline_find_in_page_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/perm_identity/baseline_perm_identity_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -316,7 +319,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_menu_buscar" />
+                            <entry key="outputName" value="ic_baseline_perm_identity_24" />
                             <entry key="sourceFile" value="C:\Users\PC\AndroidStudioProjects\MyApplicationtutorial" />
                           </map>
                         </option>

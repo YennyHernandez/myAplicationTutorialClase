@@ -1,9 +1,6 @@
 package com.yennyh.myapplicationtutorial.data.database.dao
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import com.yennyh.myapplicationtutorial.data.database.entities.Deudor
 
 @Dao  // objeto para encontrar los datos de entities, y acceder a la base de datos
@@ -14,5 +11,9 @@ interface DeudorDAO {
     fun searchDeudor(nombre:String):Deudor
     @Delete
     fun deleteDeudor(deudor: Deudor)
+    @Update
+    fun updateDeudor(deudor: Deudor)
+    @Query("SELECT * FROM tabla_deudor")
+    fun getDeudores() : List<Deudor>
 
 }

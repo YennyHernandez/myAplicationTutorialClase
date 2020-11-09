@@ -4,15 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F488A5AB"
+    android:backgroundTint="#88A5AB"
     tools:context=".ui.splash.SplashActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="230dp"
         android:layout_height="184dp"
+        android:backgroundTint="#88A5AB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@mipmap/ic_logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

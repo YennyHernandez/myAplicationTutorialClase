@@ -6,6 +6,10 @@
     <group android:checkableBehavior="single">
 
     <item
+        android:id="@+id/nav_lista"
+        android:icon="@drawable/ic_baseline_format_list_bulleted_24"
+        android:title="@string/lista" />
+    <item
         android:id="@+id/nav_crear"
         android:icon="@drawable/ic_menu_add"
         android:title="@string/crear" />
@@ -16,6 +20,7 @@
 
     <item
         android:id="@+id/nav_actualizar"
+        android:icon="@drawable/ic_menu_editar"
         android:title="@string/actualizar" />
     <item
         android:id="@+id/nav_borrar"
