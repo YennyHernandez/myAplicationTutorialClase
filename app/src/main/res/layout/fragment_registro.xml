@@ -105,13 +105,13 @@
             android:layout_height="60dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="108dp"
+            android:layout_marginBottom="216dp"
             android:backgroundTint="#DA5C87"
             android:text="@string/register"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
@@ -126,18 +126,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/contrasena_edit_text" />
-
-        <TextView
-            android:id="@+id/respuesta_text_View"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="@string/respuesta_text_view"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registrar_button" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
@@ -181,73 +169,5 @@
             app:layout_constraintTop_toBottomOf="@+id/verificarcontra_edit_text"
             app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/pasatiempo_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="8dp"
-            android:text="@string/pasatiempo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-        <CheckBox
-            android:id="@+id/nadar_checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/nadar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pasatiempo_text_view" />
-
-        <CheckBox
-            android:id="@+id/caminar_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/Caminar"
-            app:layout_constraintEnd_toStartOf="@+id/leer_checkbox"
-            app:layout_constraintStart_toEndOf="@+id/nadar_checkBox"
-            app:layout_constraintTop_toBottomOf="@+id/pasatiempo_text_view" />
-
-        <CheckBox
-            android:id="@+id/leer_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="@string/leer"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pasatiempo_text_view" />
-
-        <TextView
-            android:id="@+id/lugar_nacimiento_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/lugar_nacimiento"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nadar_checkBox" />
-
-        <Spinner
-            android:id="@+id/ciudad_nacimiento_spinner"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:entries="@array/ciudad_nacimiento"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lugar_nacimiento_text_view" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
-
