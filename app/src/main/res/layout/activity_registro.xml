@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/fragment"
-        android:name="com.yennyh.myapplicationtutorial.ui.crear.RegistroFragment"
+        android:name="com.yennyh.myapplicationtutorial.ui.registro.RegistroFragment"
         android:layout_width="355dp"
         android:layout_height="672dp"
         app:layout_constraintBottom_toBottomOf="parent"

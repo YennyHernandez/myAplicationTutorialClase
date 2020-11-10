@@ -1,15 +1,15 @@
 package com.yennyh.myapplicationtutorial.ui.bottom
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yennyh.myapplicationtutorial.R
 
-class bottomActivity : AppCompatActivity() {
+class BottomActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +21,11 @@ class bottomActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_lista, R.id.nav_crear, R.id.nav_buscar, R.id.nav_actualizar, R.id.nav_borrar
+                R.id.nav_lista,
+                R.id.nav_crear,
+                R.id.nav_buscar,
+                R.id.nav_actualizar,
+                R.id.nav_borrar
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

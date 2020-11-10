@@ -1,8 +1,8 @@
 package com.yennyh.myapplicationtutorial.ui.splash
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.yennyh.myapplicationtutorial.R
 import com.yennyh.myapplicationtutorial.ui.login.LoginActivity
 import java.util.*
@@ -17,7 +17,6 @@ class SplashActivity : AppCompatActivity() {
             gotoLoginActivity()
         },  2000 // cuanto tiempo lo voy a ejecutar
         )
-
     }
 
     fun gotoLoginActivity(){

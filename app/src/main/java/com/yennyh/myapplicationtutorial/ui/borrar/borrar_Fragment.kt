@@ -1,15 +1,14 @@
 package com.yennyh.myapplicationtutorial.ui.borrar
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.yennyh.myapplicationtutorial.R
 import com.yennyh.myapplicationtutorial.data.database.dao.DeudorDAO
 import com.yennyh.myapplicationtutorial.databinding.FragmentBorrarBinding
-import com.yennyh.myapplicationtutorial.databinding.FragmentBuscarBinding
 import com.yennyh.myapplicationtutorial.misdeudores
 
 class borrar_Fragment : Fragment() {
@@ -38,7 +37,5 @@ class borrar_Fragment : Fragment() {
         }
     }
 
-    companion object {
-
-    }
+    companion object
 }

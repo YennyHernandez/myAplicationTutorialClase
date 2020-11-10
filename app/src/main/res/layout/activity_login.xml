@@ -6,51 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.login.LoginActivity">
 
-    <EditText
-        android:id="@+id/nombre_editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="@string/nombre"
-        android:inputType="textPersonName"
-        android:text="@string/nombre"
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.yennyh.myapplicationtutorial.ui.login.LoginFragment"
+        android:layout_width="328dp"
+        android:layout_height="664dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:importantForAutofill="no" />
-
-    <EditText
-        android:id="@+id/contrasena_editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="@string/contraseña"
-        android:inputType="textPersonName"
-        android:text="@string/contraseña"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre_editTextText"
-        android:importantForAutofill="no" />
-
-    <Button
-        android:id="@+id/ingresar_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/ingresar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contrasena_editTextText" />
-
-    <Button
-        android:id="@+id/registrar_login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/register"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ingresar_button" />
+        app:layout_constraintVertical_bias="0.487" />
 </androidx.constraintlayout.widget.ConstraintLayout>

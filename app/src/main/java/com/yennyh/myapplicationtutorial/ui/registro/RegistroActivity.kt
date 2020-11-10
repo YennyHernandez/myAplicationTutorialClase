@@ -1,7 +1,7 @@
 package com.yennyh.myapplicationtutorial.ui.registro
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.yennyh.myapplicationtutorial.R
 
 class RegistroActivity : AppCompatActivity() {
