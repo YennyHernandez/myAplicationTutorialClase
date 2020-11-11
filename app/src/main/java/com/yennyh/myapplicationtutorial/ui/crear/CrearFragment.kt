@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.yennyh.myapplicationtutorial.R
 import com.yennyh.myapplicationtutorial.data.database.dao.DeudorDAO
@@ -26,13 +27,26 @@ class CrearFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
        // super.onViewCreated(view, savedInstanceState) lo que viene normalmente antes de usar binding
         binding = FragmentCrearBinding.bind(view)
-        binding.guardarButton.setOnClickListener{
-            val nombre = binding.nombreTextInputEditText.text.toString()
-            val telefono = binding.telefonoTextInputEditText.text.toString().toLong()
-            val valor =  binding.deudaTextInputEditText.text.toString().toLong()
-            val deudor = Deudor(NULL, nombre, telefono, valor)
-            val deudorDAO :DeudorDAO = misdeudores.database.DeudorDAO()  //aqui ya tenemos acceso al DAO
-            deudorDAO.insertDeudor(deudor)  //se insertan los datos por medio de la funcion insert
+        binding.guardarButton.setOnClickListener {
+
+            if (binding.nombreTextInputEditText.text?.isNotBlank()!!
+                && binding.telefonoTextInputEditText.text?.isNotBlank()!!
+                && binding.deudaTextInputEditText.text?.isNotEmpty()!!
+            ) {
+
+                val nombre = binding.nombreTextInputEditText.text.toString()
+                val telefono = binding.telefonoTextInputEditText.text.toString().toLong()
+                val valor = binding.deudaTextInputEditText.text.toString().toLong()
+                val deudor = Deudor(NULL, nombre, telefono, valor)
+                val deudorDAO: DeudorDAO =
+                    misdeudores.database.DeudorDAO()  //aqui ya tenemos acceso al DAO
+                deudorDAO.insertDeudor(deudor)  //se insertan los datos por medio de la funcion insert
+                Toast.makeText(context, "Se creó deudor!", Toast.LENGTH_SHORT).show()
+
+            } else {
+                Toast.makeText(context, "Ingrese todo lo campos!", Toast.LENGTH_SHORT).show()
+            }
+
         }
      /* con syntetic
         guardar_button.setOnClickListener{
@@ -44,7 +58,6 @@ class CrearFragment : Fragment() {
            // Toast.makeText(context,"si entro",Toast.LENGTH_SHORT).show() muestra como mensaje para pruebas
         }*/
     }
-    companion object {
 
-    }
+    companion object
 }

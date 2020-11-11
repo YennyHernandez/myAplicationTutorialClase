@@ -9,11 +9,11 @@
 
     <EditText
         android:id="@+id/email_editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="339dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
-        android:hint="@string/nombre"
+        android:hint="@string/correo"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,8 +23,8 @@
 
     <EditText
         android:id="@+id/contrasena_editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="329dp"
+        android:layout_height="52dp"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="@string/contraseña"
@@ -36,9 +36,10 @@
 
     <Button
         android:id="@+id/ingresar_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="214dp"
+        android:layout_height="47dp"
         android:layout_marginTop="24dp"
+        android:backgroundTint="@color/colorPrimary"
         android:text="@string/ingresar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,9 +47,10 @@
 
     <Button
         android:id="@+id/registrar_login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="202dp"
+        android:layout_height="47dp"
         android:layout_marginTop="24dp"
+        android:backgroundTint="@color/colorPrimary"
         android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.login.LoginActivity">
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment2"
         android:name="com.yennyh.myapplicationtutorial.ui.login.LoginFragment"
         android:layout_width="328dp"
