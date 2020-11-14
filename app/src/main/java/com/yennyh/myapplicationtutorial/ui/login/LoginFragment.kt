@@ -14,7 +14,7 @@ import com.yennyh.myapplicationtutorial.misdeudores
 import com.yennyh.myapplicationtutorial.ui.bottom.BottomActivity
 import com.yennyh.myapplicationtutorial.ui.registro.RegistroActivity
 
-
+//LOGIN CON ROOM
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding

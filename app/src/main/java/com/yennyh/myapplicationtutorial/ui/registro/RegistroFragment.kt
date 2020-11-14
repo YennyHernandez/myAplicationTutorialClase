@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
 import com.yennyh.myapplicationtutorial.R
 import com.yennyh.myapplicationtutorial.data.database.dao.RegistroDAO
 import com.yennyh.myapplicationtutorial.data.database.entities.Registro
@@ -15,7 +16,9 @@ import com.yennyh.myapplicationtutorial.misdeudores
 import com.yennyh.myapplicationtutorial.ui.login.LoginActivity
 import java.sql.Types.NULL
 
+
 class RegistroFragment : Fragment() {
+    private lateinit var auth: FirebaseAuth     //paso 1 firebase
 
     private lateinit var binding: FragmentRegistroBinding //lo que se agrega al usar binding
     override fun onCreateView(
@@ -26,6 +29,11 @@ class RegistroFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_registro, container, false)
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        auth = FirebaseAuth.getInstance()   //Instancia firebase
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         // super.onViewCreated(view, savedInstanceState) lo que viene normalmente antes de usar binding
         binding = FragmentRegistroBinding.bind(view)
@@ -33,6 +41,10 @@ class RegistroFragment : Fragment() {
             val nombre = binding.nombreEditText.text.toString()
             val email = binding.correoEditText.text.toString()
             val contrasena = binding.contrasenaEditText.text.toString()
+
+
+            //  Este codigo es para bases de datos con ROOM
+
             val registro = Registro(NULL, nombre, email, contrasena)
             val registroDAO: RegistroDAO = misdeudores.database.RegistroDAO()
             val user =
@@ -47,4 +59,6 @@ class RegistroFragment : Fragment() {
             }
         }
     }
+
+
 }
