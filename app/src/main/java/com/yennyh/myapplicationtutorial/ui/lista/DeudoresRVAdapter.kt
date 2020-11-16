@@ -3,13 +3,16 @@ package com.yennyh.myapplicationtutorial.ui.lista
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.yennyh.myapplicationtutorial.R
-import com.yennyh.myapplicationtutorial.data.database.entities.Deudor
+import com.yennyh.myapplicationtutorial.data.server.DeudorServer
 import com.yennyh.myapplicationtutorial.databinding.DeudoresItemBinding
 
-class DeudoresRVAdapter(var deudoresList:ArrayList<Deudor>):RecyclerView.Adapter<DeudoresRVAdapter.DeudoresViewHolder>() {
+/*class DeudoresRVAdapter(var deudoresList:ArrayList<Deudor>):
+    RecyclerView.Adapter<DeudoresRVAdapter.DeudoresViewHolder>() {    ROOM */
+
+class DeudoresRVAdapter(var deudoresList: ArrayList<DeudorServer>) :
+    RecyclerView.Adapter<DeudoresRVAdapter.DeudoresViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -36,7 +39,9 @@ class DeudoresRVAdapter(var deudoresList:ArrayList<Deudor>):RecyclerView.Adapter
     class DeudoresViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) { //coloca los datos en item, setea la informacion de las cajas
         private val binding = DeudoresItemBinding.bind(itemView)
-        fun bindDeudor(deudor: Deudor) {
+
+        //fun bindDeudor(deudor: Deudor) {   ROOM
+        fun bindDeudor(deudor: DeudorServer) {
             binding.nombreTextView.text = deudor.nombre
             binding.valorTextView.text = deudor.valor.toString()
         }

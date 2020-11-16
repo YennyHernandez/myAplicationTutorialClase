@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.firebase.database.FirebaseDatabase
 import com.yennyh.myapplicationtutorial.R
 import com.yennyh.myapplicationtutorial.data.database.dao.DeudorDAO
 import com.yennyh.myapplicationtutorial.data.database.entities.Deudor
+import com.yennyh.myapplicationtutorial.data.server.DeudorServer
 import com.yennyh.myapplicationtutorial.databinding.FragmentCrearBinding
 import com.yennyh.myapplicationtutorial.misdeudores
 import java.sql.Types.NULL
@@ -37,11 +39,10 @@ class CrearFragment : Fragment() {
                 val nombre = binding.nombreTextInputEditText.text.toString()
                 val telefono = binding.telefonoTextInputEditText.text.toString().toLong()
                 val valor = binding.deudaTextInputEditText.text.toString().toLong()
-                val deudor = Deudor(NULL, nombre, telefono, valor)
-                val deudorDAO: DeudorDAO =
-                    misdeudores.database.DeudorDAO()  //aqui ya tenemos acceso al DAO
-                deudorDAO.insertDeudor(deudor)  //se insertan los datos por medio de la funcion insert
-                Toast.makeText(context, "Se creó deudor!", Toast.LENGTH_SHORT).show()
+
+                guardarDeudorEnDatabase(nombre, telefono, valor)
+                guardarDeudorEnFirebase(nombre, telefono, valor)
+
 
             } else {
                 Toast.makeText(context, "Ingrese todo lo campos!", Toast.LENGTH_SHORT).show()
@@ -57,6 +58,34 @@ class CrearFragment : Fragment() {
            // Log.d("deudor", deudor.nombre)     muestra en consola para pruebas
            // Toast.makeText(context,"si entro",Toast.LENGTH_SHORT).show() muestra como mensaje para pruebas
         }*/
+    }
+
+    private fun guardarDeudorEnFirebase(nombre: String, telefono: Long, valor: Long) {
+        val database = FirebaseDatabase.getInstance()
+        val myDeudorRef = database.getReference("deudores")
+
+        val id = myDeudorRef.push().key //id aleatorio
+        val deudorServer =
+            DeudorServer(id, nombre, telefono, valor)  //crea objeto (clase deudor server)
+        id?.let {
+            myDeudorRef.child(id).setValue(deudorServer)
+        }  //para evitar problemas con el null
+        cleanViews()
+
+    }
+
+    fun cleanViews() {
+        binding.nombreTextInputEditText.setText("")
+        binding.telefonoTextInputEditText.setText("")
+        binding.deudaTextInputEditText.setText("")
+    }
+
+    private fun guardarDeudorEnDatabase(nombre: String, telefono: Long, valor: Long) {
+        val deudor = Deudor(NULL, nombre, telefono, valor)
+        val deudorDAO: DeudorDAO =
+            misdeudores.database.DeudorDAO()  //aqui ya tenemos acceso al DAO
+        deudorDAO.insertDeudor(deudor)  //se insertan los datos por medio de la funcion insert
+        Toast.makeText(context, "Se creó deudor!", Toast.LENGTH_SHORT).show()
     }
 
     companion object

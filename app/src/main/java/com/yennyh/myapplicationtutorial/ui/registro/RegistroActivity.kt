@@ -6,7 +6,9 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.yennyh.myapplicationtutorial.R
+import com.yennyh.myapplicationtutorial.data.server.Usuario
 import com.yennyh.myapplicationtutorial.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_registro.*
 
@@ -37,7 +39,7 @@ class RegistroActivity : AppCompatActivity() {
         registrar_button2.setOnClickListener {
             val correo = correo_edit_text2r.text.toString()
             val contrasena = contrasena_edit_text2r.text.toString()
-
+            val nombre = nombre_edit_text2r.text.toString()
             /* se pasa a otra actividad y se envia informacion
            val intent = Intent(this, LoginActivity::class.java)
 
@@ -45,7 +47,7 @@ class RegistroActivity : AppCompatActivity() {
             intent.putExtra("contrasena", contrasena)
             startActivity(intent)
             finish() */
-            registroEnFirebase(correo, contrasena)
+            registroEnFirebase(correo, contrasena, nombre)
 
             /* otras opciones que se tenian en el registro xml
             val nombre = nombre_edit_text.text.toString()
@@ -79,13 +81,20 @@ class RegistroActivity : AppCompatActivity() {
     }
 
     //paso 3 firebase
-    private fun registroEnFirebase(correo: String, contrasena: String) {   //crea en base de datos
+    private fun registroEnFirebase(
+        correo: String,
+        contrasena: String,
+        nombre: String
+    ) {   //crea en base de datos (Autentificación)
         auth.createUserWithEmailAndPassword(correo, contrasena)
             .addOnCompleteListener(this) { task ->   //si se realizo lo anterior continua
                 if (task.isSuccessful) {
+                    val uid =
+                        auth.currentUser?.uid  //copia el id asociado a ese registro que crea firebase automaticamente
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "createUserWithEmail:success")
-                    goToLoginActivity()
+                    CrearUsuarioEnBaseDeDatos(uid, correo, nombre)
+
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)
@@ -95,6 +104,23 @@ class RegistroActivity : AppCompatActivity() {
                     ).show()
                 }
             }
+    }
+
+    private fun CrearUsuarioEnBaseDeDatos(
+        uid: String?,
+        correo: String,
+        nombre: String
+    ) {   //crea información en tabla de firebaserealtime
+        val database = FirebaseDatabase.getInstance()
+        val myUsersReference =
+            database.getReference("usuarios")   //me paro en la tabla que deseo y si no existe la crea
+        //val id = myUsersReference.push().key //agrega id aleatoriamente pero como queriamos el mismo del que se resistro uso eol uid
+        val usuario = Usuario(uid, nombre, correo)  //instancia el objeto (clase usuario)
+        uid?.let {
+            myUsersReference.child(uid).setValue(usuario)
+        }  // mejor practica para no quitar la propiedade de null
+        goToLoginActivity()
+
     }
 
     private fun goToLoginActivity() {
